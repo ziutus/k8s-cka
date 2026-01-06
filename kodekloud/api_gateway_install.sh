@@ -4,7 +4,7 @@ kubectl kustomize "https://github.com/nginx/nginx-gateway-fabric/config/crd/gate
 kubectl apply -f https://raw.githubusercontent.com/nginx/nginx-gateway-fabric/v1.6.1/deploy/crds.yaml
 kubectl apply -f https://raw.githubusercontent.com/nginx/nginx-gateway-fabric/v1.6.1/deploy/nodeport/deploy.yaml
 echo "Waiting 10 seconds to start pods"
-wait 10
+sleep 10
 kubectl get pods -n nginx-gateway
 kubectl get svc -n nginx-gateway nginx-gateway -o yaml
 kubectl patch svc nginx-gateway -n nginx-gateway --type='json' -p='[
